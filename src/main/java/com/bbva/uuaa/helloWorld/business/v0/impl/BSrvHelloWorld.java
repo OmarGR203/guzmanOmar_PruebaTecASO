@@ -2,11 +2,10 @@ package com.bbva.uuaa.helloWorld.business.v0.impl;
 
 import com.bbva.uuaa.helloWorld.business.v0.IBSrvHelloWorld;
 import com.bbva.uuaa.helloWorld.business.v0.dto.*;
-import com.bbva.uuaa.helloWorld.business.v0.dto.BDetails;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 @Service
 public class BSrvHelloWorld implements IBSrvHelloWorld {
@@ -20,7 +19,9 @@ public class BSrvHelloWorld implements IBSrvHelloWorld {
         BProductOut bProductOut = new BProductOut();
         BSubproductOut bSubproductOut = new BSubproductOut();
 
-        long generatedId = ThreadLocalRandom.current().nextLong(1_000_000_000L, 1_000_000_000L);
+        Random random = new Random();
+
+        long generatedId = 1_000_000_000L + (long) (random.nextDouble() * (1_000_000_000L));
         String assignedUniqueId = Long.toString(generatedId);
         bDataOut.setId(assignedUniqueId);
 

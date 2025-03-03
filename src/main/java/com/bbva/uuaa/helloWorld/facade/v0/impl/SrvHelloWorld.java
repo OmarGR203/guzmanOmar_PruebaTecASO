@@ -32,9 +32,6 @@ public class SrvHelloWorld implements ISrvHelloWorld {
 	@Autowired
 	IBSrvHelloWorld business;
 
-	@Autowired
-	IMapperSrvHelloWorld mapper;
-
 	@Override
 	@POST
 	@Path ("/simulations/{nuip}")
